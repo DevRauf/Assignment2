@@ -45,13 +45,13 @@
 
 //Abdul Rauf ---- Assignment2----------------------------------------Q.No.3
 // function addParagraph(text) {
-//     // create a new paragraph element
-//     const paragraph = document.createElement('p');
-//     // set the text content of the new paragraph element
+//     
+//     let paragraph = document.createElement('p');
+//     
 //     paragraph.textContent = text;
-//     // get the HTML body element
-//     const body = document.querySelector('body');
-//     // append the new paragraph element to the body
+//     
+//     let body = document.querySelector('body');
+//    
 //     body.appendChild(paragraph);
 // }
 
@@ -61,20 +61,20 @@
 
 
 //Abdul Rauf ---- Assignment2----------------------------------------Q.No.4
-function addListItem(text) {
 
-    // create a new list item element
-    const listItem = document.createElement('li');
-    // set the text content of the new list item element
-    listItem.textContent = text;
+// function addListItem(text) {
 
-    // get the unordered list element by its ID
-    const list = document.getElementById('myList');
-    // append the new list item element to the unordered list
-    list.appendChild(listItem);
-}
+//     let listItem = document.createElement('li');
 
-addListItem('Item 1');
+//     listItem.textContent = text;
+
+
+//     let list = document.getElementById('myList');
+
+//     list.appendChild(listItem);
+// }
+
+// addListItem('Item 1');
 
 
 
@@ -83,15 +83,37 @@ addListItem('Item 1');
 
 
 //Abdul Rauf ---- Assignment2----------------------------------------Q.No.5
+// function changeBackgroundColor(element, color) {
+//     element.style.backgroundColor = color;
+// }
 
+// // Get a reference to the element with ID "myElement"
+// const myElement = document.getElementById("myElement");
 
-
+// changeBackgroundColor(myElement, "blue");
 
 
 //====================================
 
 
 
-//Abdul Rauf ---- Assignment2----Q.No
+//Abdul Rauf ---- Assignment2--------------------------------------Q.No.6
+
+function saveToLocalStorage(key, object) {
+    let json = JSON.stringify(object);
+    localStorage.setItem(key, json);
+}
+
+let myObj = {
+    name: "Rauf",
+    age: 30
+};
+
+saveToLocalStorage("myKey", myObj);
+
+
+let jsonVar = localStorage.getItem("myKey");
+let myObject = JSON.parse(jsonVar);
+
 
 //====================================
