@@ -1,4 +1,4 @@
-//Abdul Rauf ---- Assignment2----------------------------------------Q.No1
+//Abdul Rauf ---- Assignment2----------------------------------------Q.No.1
 
 // function OuterAdd(num) {
 //     return function(x) {
@@ -12,7 +12,7 @@
 
 //==============================================
 
-//Abdul Rauf ---- Assignment2----------------------------------------Q.No2
+//Abdul Rauf ---- Assignment2----------------------------------------Q.No.2
 
 // function searchArray(arr, val) {
 //     // Base case: if the array is empty, return false (value not found)
@@ -43,14 +43,40 @@
 
 //====================================
 
+//Abdul Rauf ---- Assignment2----------------------------------------Q.No.3
+// function addParagraph(text) {
+//     // create a new paragraph element
+//     const paragraph = document.createElement('p');
+//     // set the text content of the new paragraph element
+//     paragraph.textContent = text;
+//     // get the HTML body element
+//     const body = document.querySelector('body');
+//     // append the new paragraph element to the body
+//     body.appendChild(paragraph);
+// }
 
-
-//Abdul Rauf ---- Assignment2----------------------------------------Q.No
+// addParagraph('Hello, world!');
 
 //====================================
 
 
-//Abdul Rauf ---- Assignment2----------------------------------------Q.No
+//Abdul Rauf ---- Assignment2----------------------------------------Q.No.4
+function addListItem(text) {
+
+    // create a new list item element
+    const listItem = document.createElement('li');
+    // set the text content of the new list item element
+    listItem.textContent = text;
+
+    // get the unordered list element by its ID
+    const list = document.getElementById('myList');
+    // append the new list item element to the unordered list
+    list.appendChild(listItem);
+}
+
+addListItem('Item 1');
+
+
 
 //====================================
 
