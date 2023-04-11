@@ -45,13 +45,13 @@
 
 //Abdul Rauf ---- Assignment2----------------------------------------Q.No.3
 // function addParagraph(text) {
-//     
+
 //     let paragraph = document.createElement('p');
-//     
+
 //     paragraph.textContent = text;
-//     
+
 //     let body = document.querySelector('body');
-//    
+
 //     body.appendChild(paragraph);
 // }
 
@@ -99,21 +99,91 @@
 
 //Abdul Rauf ---- Assignment2--------------------------------------Q.No.6
 
-function saveToLocalStorage(key, object) {
-    let json = JSON.stringify(object);
-    localStorage.setItem(key, json);
+// function saveToLocalStorage(key, object) {
+//     let json = JSON.stringify(object);
+//     localStorage.setItem(key, json);
+// }
+
+// let myObj = {
+//     name: "Rauf",
+//     age: 30
+// };
+
+// saveToLocalStorage("myKey", myObj);
+
+
+// let jsonVar = localStorage.getItem("myKey");
+// let myObject = JSON.parse(jsonVar);
+
+
+//====================================
+
+//Abdul Rauf ---- Assignment2--------------------------------------Q.No.7
+// function getObjectFromLocalStorage(key) {
+//     try {
+
+//         const item = localStorage.getItem(key);
+
+//         // If item is null, return null
+//         if (item === null) {
+//             return null;
+//         }
+
+
+//         const object = JSON.parse(item);
+//         return object;
+//     } catch (error) {
+
+//         console.error(`Error retrieving object from localStorage: ${error}`);
+//         return null;
+//     }
+// }
+
+
+
+// const myObject = { name: "Rauf", age: 30 };
+// localStorage.setItem("myKey", JSON.stringify(myObject));
+
+
+// const retrievedObject = getObjectFromLocalStorage("myKey");
+
+// console.log(retrievedObject); // { name: "John", age: 30 }
+
+
+//====================================
+
+//Abdul Rauf ---- Assignment2--------------------------------------Q.No.8
+function saveObjectToLocalStorage(obj) {
+    // Save each property of the object to localStorage
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            localStorage.setItem(key, JSON.stringify(obj[key]));
+        }
+    }
+
+    // Retrieve the object from localStorage
+    var retrievedObj = {};
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        retrievedObj[key] = JSON.parse(localStorage.getItem(key));
+    }
+
+    return retrievedObj;
 }
 
-let myObj = {
-    name: "Rauf",
-    age: 30
+
+var myObj = {
+    name: "RAuf",
+    age: 30,
+    city: "Tando Adam"
 };
 
-saveToLocalStorage("myKey", myObj);
+// Save the object to localStorage
+saveObjectToLocalStorage(myObj);
 
-
-let jsonVar = localStorage.getItem("myKey");
-let myObject = JSON.parse(jsonVar);
+// Retrieve the object from localStorage
+var retrievedObj = saveObjectToLocalStorage();
+console.log(retrievedObj); // Output: {name: "Rauf", age: 30, city: "Tando Adam"}
 
 
 //====================================
